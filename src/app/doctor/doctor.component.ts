@@ -14,14 +14,14 @@ export class DoctorComponent implements OnInit {
   }
 
   onNextPatient() {
-    this.queueService.nextPatient();
+    this.queueService.getNextPatient();
     // if (this.queueService.patients.length > 0) {
     //   this.isEmpty = false;
     // }
   }
 
   onQueuePatient() {
-
+    this.queueService.queuePatient();
   }
 
 }
