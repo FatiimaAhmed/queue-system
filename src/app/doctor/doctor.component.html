@@ -1,1 +1,17 @@
-<p>doctor works!</p>
+<app-go-back-anchor [link]="'/'"></app-go-back-anchor>
+<div class="py-5">
+    <app-card>
+        <div class="row">
+            <div class="col-4 border-right">
+                <app-waiting-list></app-waiting-list>
+            </div>
+            <div class="col-4 border-right">
+                <app-current-patient></app-current-patient>
+            </div>
+            <div class="col-4 d-flex flex-column justify-content-end ">
+                <button class="btn-block btn btn-sub" (click)="onQueuePatient()">patient did't show</button>
+                <button class="btn-block btn btn-main" (click)="onNextPatient()" [disabled]="isEmpty">next patient</button>
+            </div>
+        </div>
+    </app-card>
+</div>

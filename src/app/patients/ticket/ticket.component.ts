@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { QueueService } from 'src/app/queue.service';
 
 @Component({
   selector: 'app-ticket',
@@ -7,14 +8,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ticket.component.css']
 })
 export class TicketComponent implements OnInit {
-
   ticketData: any;
-  constructor(private route: ActivatedRoute) { }
+  isCanceld: boolean = false;
+  constructor(private route: ActivatedRoute, private router: Router, private queueService: QueueService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(res => {
       this.ticketData = res;
     })
+  }
+
+  onCancelTicket(id: number) {
+    this.queueService.cancelTicket(id);
+    this.isCanceld = true;
+    setTimeout(() => {
+      this.isCanceld = false;
+      this.router.navigateByUrl('/patients/new-patient');
+    }, 1500);
   }
 
 }

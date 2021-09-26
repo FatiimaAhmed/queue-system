@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientFormComponent } from './patient-form/patient-form.component';
-//import { PatientsComponent } from './patients.component';
 import { TicketComponent } from './ticket/ticket.component';
 
 const routes: Routes = [
@@ -17,7 +16,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes)],
+  RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class PatientsRoutingModule { }

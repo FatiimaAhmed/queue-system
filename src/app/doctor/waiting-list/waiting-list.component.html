@@ -1,0 +1,16 @@
+<h5 class="tx-primary">waiting list</h5>
+<ul class="p-0" *ngIf="waitingList.length > 0">
+    <p class="tx-secondary mb-1">next in line</p>
+    <li *ngFor="let patient of waitingList">
+        <div class="border p-2 mb-3 rounded text-secondary w-100">
+            <p class="font-weight-bold mb-0">
+                patient ID: #{{ patient.id }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="mb-0 tx-22">{{ patient.name }}</p>
+                <span class="badge badge-secondary">{{ patient.gender }}</span>
+            </div>
+        </div>
+    </li>
+</ul>
+<p *ngIf="waitingList.length == 0">no patients are waiting.</p>
