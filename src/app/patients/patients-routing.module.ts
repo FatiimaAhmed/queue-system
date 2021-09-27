@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientFormComponent } from './patient-form/patient-form.component';
-import { TicketComponent } from './ticket/ticket.component';
+import { TicketComponent } from './patient-ticket/ticket.component';
 
 const routes: Routes = [
   {

@@ -10,6 +10,7 @@ import { QueueService } from 'src/app/queue.service';
 export class TicketComponent implements OnInit {
   ticketData: any;
   isCanceld: boolean = false;
+  print: boolean = false;
   constructor(private route: ActivatedRoute, private router: Router, private queueService: QueueService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,13 @@ export class TicketComponent implements OnInit {
       this.isCanceld = false;
       this.router.navigateByUrl('/patients/new-patient');
     }, 1500);
+  }
+
+  onPrintTicket() {
+    this.print = true;
+    setTimeout(() => {
+      this.router.navigateByUrl('/patients/new-patient');
+    }, 1000);
   }
 
 }

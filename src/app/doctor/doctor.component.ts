@@ -26,7 +26,11 @@ export class DoctorComponent implements OnInit {
   }
 
   onQueuePatient() {
-    this.queueService.queuePatient();
+    if (this.queueService.patients.length > 1) {
+      this.queueService.queuePatient();
+    } else {
+      alert('this is the last patient')
+    }
   }
 
 }
