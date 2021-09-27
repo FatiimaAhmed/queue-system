@@ -5,7 +5,7 @@ import { QueueService } from 'src/app/queue.service';
 @Component({
   selector: 'app-ticket',
   templateUrl: './ticket.component.html',
-  styleUrls: ['./ticket.component.css']
+  styles: ['p { margin: 0; font-weight: 500}']
 })
 export class TicketComponent implements OnInit {
   ticketData: any;

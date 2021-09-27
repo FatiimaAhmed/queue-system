@@ -4,7 +4,7 @@ import { QueueService } from 'src/app/queue.service';
 @Component({
   selector: 'app-waiting-list',
   templateUrl: './waiting-list.component.html',
-  styleUrls: ['./waiting-list.component.css']
+  styles: ['ul {list-style: none;}']
 })
 export class WaitingListComponent implements OnInit {
   waitingList: any[] = [];

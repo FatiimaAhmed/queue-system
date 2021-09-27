@@ -30,13 +30,13 @@ export class PatientFormComponent implements OnInit {
     });
 
     if (this.patientInfoform.status == 'VALID') {
-      //console.log('valid')
+
       this.patientInfoform.patchValue({ id: id });
       this.queueService.patients.push(this.patientInfoform.value);
-      console.log(this.queueService.patients)
+
       this.queueService.ticketCount += 1;
 
-      this.router.navigate(['../ticket'], { queryParams: { number: this.queueService.ticketCount, name: this.patientInfoform.get('fullname').value, id: this.patientInfoform.get('id').value}, relativeTo: this.route });
+      this.router.navigate(['../ticket'], { queryParams: { number: this.queueService.ticketCount, name: this.patientInfoform.get('fullname').value, id: this.patientInfoform.get('id').value }, relativeTo: this.route });
       this.patientInfoform.reset();
     } else {
       alert('please fill all form fields')

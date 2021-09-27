@@ -4,7 +4,6 @@ import { QueueService } from 'src/app/queue.service';
 @Component({
   selector: 'app-current-patient',
   templateUrl: './current-patient.component.html',
-  styleUrls: ['./current-patient.component.css']
 })
 export class CurrentPatientComponent implements OnInit {
   currentPatient: any;

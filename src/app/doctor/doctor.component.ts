@@ -4,7 +4,6 @@ import { QueueService } from '../queue.service';
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
-  styleUrls: ['./doctor.component.css']
 })
 export class DoctorComponent implements OnInit {
   isEmpty: boolean = false;
@@ -14,7 +13,7 @@ export class DoctorComponent implements OnInit {
   ngOnInit(): void {
     if (this.queueService.patients.length <= 0) {
       this.isEmpty = true;
-      this.btntext = "your waiting list is empty 🙅🏻‍♂️"
+      this.btntext = "your waiting list is empty."
     }
   }
 

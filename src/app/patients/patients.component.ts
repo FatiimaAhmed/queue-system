@@ -1,13 +1,10 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-patients',
-  templateUrl: './patients.component.html',
-  styleUrls: ['./patients.component.css']
+  template: `<router-outlet></router-outlet>`,
 })
 export class PatientsComponent implements OnInit {
-  @ViewChild('componentInjector', { static: true, read: ViewContainerRef }) componentInjector: ViewContainerRef;
-  components: any[] = [];
   constructor() { }
 
   ngOnInit(): void {
