@@ -7,13 +7,17 @@ export class QueueService {
   @Output() load = new EventEmitter<any>();
   ticketCount: number = 0;
   patients: { id: number, name: string, fullname: string, gender: string }[] = [];
-  updatedPatients: any;
   currentPatient: any;
   constructor() { }
 
   cancelTicket(id: number) {
-    this.updatedPatients = this.patients.filter(patient => { return patient.id == id });
-    this.patients = this.updatedPatients;
+    console.log(id)
+    const updatedPatients = this.patients.filter(patient => { 
+      console.log(patient.id, id)
+      return patient.id !== id 
+    });
+    console.log(updatedPatients)
+    this.patients = updatedPatients;
     this.ticketCount = this.ticketCount - 1;
   }
 

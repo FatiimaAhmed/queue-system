@@ -9,8 +9,8 @@
                 <app-current-patient></app-current-patient>
             </div>
             <div class="col-4 d-flex flex-column justify-content-end ">
-                <button class="btn-block btn btn-sub" (click)="onQueuePatient()">patient did't show</button>
-                <button class="btn-block btn btn-main" (click)="onNextPatient()" [disabled]="isEmpty">next patient</button>
+                <button class="btn-block btn btn-sub" (click)="onQueuePatient()" [disabled]="isEmpty">patient did't show</button>
+                <button class="btn-block btn btn-main" (click)="onNextPatient()" [disabled]="isEmpty">{{btntext}}</button>
             </div>
         </div>
     </app-card>

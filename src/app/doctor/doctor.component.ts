@@ -8,16 +8,22 @@ import { QueueService } from '../queue.service';
 })
 export class DoctorComponent implements OnInit {
   isEmpty: boolean = false;
+  btntext: string = "next patient";
   constructor(private queueService: QueueService) { }
 
   ngOnInit(): void {
+    if (this.queueService.patients.length <= 0) {
+      this.isEmpty = true;
+      this.btntext = "your waiting list is empty 🙅🏻‍♂️"
+    }
   }
 
   onNextPatient() {
     this.queueService.getNextPatient();
-    // if (this.queueService.patients.length > 0) {
-    //   this.isEmpty = false;
-    // }
+    if (this.queueService.patients.length <= 0) {
+      this.isEmpty = true;
+      this.btntext = "you're done for the day ✔️"
+    }
   }
 
   onQueuePatient() {

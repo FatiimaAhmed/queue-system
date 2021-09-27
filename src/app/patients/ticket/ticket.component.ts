@@ -19,7 +19,7 @@ export class TicketComponent implements OnInit {
   }
 
   onCancelTicket(id: number) {
-    this.queueService.cancelTicket(id);
+    this.queueService.cancelTicket(Number(id));
     this.isCanceld = true;
     setTimeout(() => {
       this.isCanceld = false;
